@@ -70,20 +70,49 @@ body {
         background-color: white;
         margin: 0 2.4rem;
 
+        @media (min-width: 650px) {
+            display: flex;
+        }
+        
+
         .header-img {
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            
+            @media (max-width: 480px) {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                
+            }
+
+            @media (min-width: 680px) {
+                max-width: 280px;
+            }
         }
         .content {
-            padding: 3.6rem 3.2rem 2.0rem 3.2rem;
+            // padding: 3.6rem 3.2rem 2.0rem 3.2rem;
+            @media (min-width: 650px) {
+            max-width: 445px;
+        }
             h1 {
-                font-size: 1.6rem;
                 font-family: $manrope;
-                line-height: 24px;
-                letter-spacing: 0.2px;
-                font-weight: bold;
                 margin-bottom: 1.2rem;
                 color: $very-dark-grayish-blue;
+                
+                @media (max-width: 480px) {
+                    margin-top: 3.6rem;
+                    margin-left: 3.2rem;
+                    margin-right: 3.2rem;
+                    font-size: 1.6rem;
+                    line-height: 24px;
+                    letter-spacing: 0.2px;
+                    font-weight: bold;
+                }
+
+                @media (min-width: 680px) {
+                    margin-top: 3.2rem;
+                    margin-left: 4rem;
+                    margin-right: 4rem;
+                    font-size: 2.0rem;
+                }
             }
 
             .content__text {
@@ -92,13 +121,58 @@ body {
                 color: $desaturated-dark-blue;
                 line-height: 20px;
                 letter-spacing: 0.12px;
-                margin-bottom: 3.2rem;
+
+                @media (max-width: 480px) {
+                    margin-bottom: 3.2rem;
+                    margin-left: 3.2rem;
+                    margin-right: 3.2rem;
+                }
+
+                @media (min-width: 680px) {
+                    margin-left: 4.0rem;
+                    margin-right: 4.0rem;
+                    margin-bottom: 2.0rem;
+                }
+            }
+
+            .share-hidden {
+                background-color: $very-dark-grayish-blue;
+                display: none;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2.2rem 3.2rem;
+                
+
+                @media (min-width: 480px) {
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                        .text {
+                            display: none;
+                        }
+                    }
+
+                .icon-share {
+                    background-color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 50%;
+                    color: white;
+
+                }
+
+                .sm-icons {
+                    display: flex;
+                    gap: 1.6rem;
+                }
             }
 
             .share {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                margin-left: 3.2rem;
+                margin-bottom: 2.0rem;
+                margin-right: 3.2rem;
                 .person-img {
                     width: 40px;
                     height: 40px;
@@ -126,16 +200,31 @@ body {
                         color: $grayish-blue;
                     }
                 }
-                .icon-share {
-                        width: 15px;
-                        height: 13px;
-                        background-color: red;
-                        padding: 2px;
-                    }
+                button {
+                    border: none;
+                    padding: 9px;
+                    border-radius: 50%;
+                    .icon-share {
+                            width: 15px;
+                            height: 13px;
+                        }
+                }
+                .icons {
+                    display: flex;
+                }
                 
             }
         }
     }
 }
 
+.active {
+    display: flex;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+
+}
 
