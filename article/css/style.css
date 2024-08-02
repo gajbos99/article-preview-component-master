@@ -131,18 +131,34 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+.right .square {
+  display: inline-block;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg); /* Center and rotate */
+  transform: rotate(90deg);
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  z-index: 2;
+}
+.right .share-container {
+  margin-left: auto;
+}
 .right .share {
   display: flex;
   position: absolute;
   background-color: hsl(217, 19%, 35%);
   bottom: 30%;
-  left: 80%;
+  left: 45%;
   color: white;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
   z-index: 1;
   opacity: 0;
+  padding: 1.8rem 3.6rem;
 }
 @media screen and (max-width: 786px) {
   .right .share {
@@ -153,6 +169,16 @@ body {
     transform: translateY(100%);
     transition: opacity 0.3s ease, transform 0.3s ease;
     padding: 2.2rem 3.2rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+@media screen and (min-width: 786px) {
+  .right .share {
+    border-radius: 10px;
+  }
+  .right .share button {
+    display: none;
   }
 }
 .right .share .icons {

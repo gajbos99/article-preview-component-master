@@ -18,7 +18,7 @@ function App() {
     <>
       <div className="container">
         <div className="left">
-          <img className='header-img' src={drawer} alt="" />
+          <img className='header-img' src={drawer} alt="Dark green cabinet with 5 drawers, a vase and 2 pictures on top" />
         </div>
         <div className="right">
           <h1 className='headingTitle'>
@@ -31,25 +31,28 @@ function App() {
             to help you make any room feel complete.
           </p>
           <div className="person">
-            <img className='person-img' src={michelle} alt="" />
+            <img className='person-img' src={michelle} alt="A picture of the creator of the article, Michelle Appleton" />
             <div className="name">
               <h4>Michelle Appleton</h4>
               28 Jun 2020
             </div>
-            <button onClick={handleSocialMedia}>
-              <img src={shareIcon} width="15" height="13" alt="Button for social media links to open, called share button" />
-            </button>
+            <div className="share-container">
+              <button onClick={handleSocialMedia}>
+                <img src={shareIcon} width="15" height="13" alt="Button for social media links to open, called share button" />
+              </button>
+                <div className={`share ${socialMedia ? 'active' : ''}`}>
+                <p>SHARE</p>
+                <div className="icons">
+                  <a href='http://facebook.com'><img src={facebook} alt="Icon of Facebook logo" /></a>
+                  <a href="http://twitter.com"><img src={twitter} alt="Icon of Twitter logo" /></a>
+                  <a href="http://pinterest.com"><img src={pinterest} alt="Icon of Pinterest logo" /></a>
+                </div>
+                <button onClick={handleSocialMedia}>
+                  <img src={shareIcon} width="15" height="13" alt="Button for social media links to open, called share button" />
+                </button>
+                <div className="square"></div>
           </div>
-          <div className={`share ${socialMedia ? 'active' : ''}`}>
-            <p>SHARE</p>
-            <div className="icons">
-              <img src={facebook} alt="Icon of Facebook logo" />
-              <img src={twitter} alt="Icon of Twitter logo" />
-              <img src={pinterest} alt="Icon of Pinterest logo" />
             </div>
-            <button onClick={handleSocialMedia}>
-              <img src={shareIcon} width="15" height="13" alt="Button for social media links to open, called share button" />
-            </button>
           </div>
         </div>
       </div>
