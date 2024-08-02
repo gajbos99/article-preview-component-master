@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+html {
+    font-size: 10px;
+}
+
+// Colors
+
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$desaturated-dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+// Font
+
+$manrope: 'Manrope', sans-serif;
+
+// Start Styling
+
+body {
+    font-size: 1.3rem;
+    font-family: $manrope;
+    background-color: $grayish-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+}
+
+@media screen and (min-width: 786px) {
+    .header-img {
+        max-width: 28.5rem;
+        height: 100%;
+    }
+}
+
+.container {
+    background-color: white;
+    margin: 7.4rem 2.4rem 8.1rem 2.4rem;
+    border-radius: 12px;
+    overflow: hidden;
+
+    @media screen and (min-width: 786px) {
+        display: flex;
+        
+        
+    }
+}
+
+.right {
+    padding: 3.6rem 3.2rem 2rem 3.2rem;
+    position: relative;
+
+    @media screen and (min-width: 786px) {
+        max-width: 44.5rem;
+    }
+
+    .headingTitle {
+        font-size: 1.6rem;
+        font-weight: bold;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        margin-bottom: 1.2rem;
+        color: $very-dark-grayish-blue;
+
+        @media screen and (min-width: 786px) {
+        font-size: 2.0rem;
+    }
+    }
+
+    .headingText {
+        font-size: 1.3rem;
+        font-weight: medium;
+        line-height: 20px;
+        letter-spacing: 0.12px;
+        color: $desaturated-dark-blue;
+        margin-bottom: 3.2rem;
+    }
+    .person {
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+        .person-img {
+            width: 4.0rem;
+            height: 4.0rem;
+            border-radius: 50%;
+            margin-right: 1.6rem;
+        }
+        button {
+            margin-left: auto;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+    }
+
+    .share {
+        display: flex;
+        position: absolute;
+        background-color: $very-dark-grayish-blue;
+        bottom: 30%;
+        left: 80%;
+        color: white;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        z-index: 1;
+        opacity: 0;
+        
+
+        @media screen and (max-width: 786px) {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            transform: translateY(100%);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            padding: 2.2rem 3.2rem;
+        }
+
+        .icons {
+            display: flex;
+            gap: 1.6rem;
+            img {
+                width: 2.0rem;
+                height: 2.0rem;
+                cursor: pointer;
+            }
+        }
+
+        button {
+            border: none;
+            padding: 0.9rem;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}
+
+.share.active {
+    opacity: 1;
+    transform: translateY(0); /* Corrected this line */
+}
